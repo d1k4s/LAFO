@@ -38,7 +38,8 @@ public class MainJframe extends javax.swing.JFrame {
         PanelLogoLaporanToko = new javax.swing.JPanel();
         PanelLogoSetting = new javax.swing.JPanel();
         PanelLogoToko = new javax.swing.JPanel();
-        panel_tengah = new javax.swing.JPanel();
+        LabelLogoToko = new javax.swing.JLabel();
+        panelContainer = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         DataBarang = new javax.swing.JPanel();
         cardTotalBarang = new javax.swing.JPanel();
@@ -208,19 +209,29 @@ public class MainJframe extends javax.swing.JFrame {
         PanelLogoToko.setBorder(javax.swing.BorderFactory.createCompoundBorder());
         PanelLogoToko.setPreferredSize(new java.awt.Dimension(50, 50));
 
+        //ImageIcon logoToko = new ImageIcon("/Asset Immage/logog cafe lafo rondok genah.png");
+        //logoToko
+        LabelLogoToko.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LabelLogoToko.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Asset Immage/logo Cafe Lafo.png"))); // NOI18N
+        LabelLogoToko.setPreferredSize(new java.awt.Dimension(50, 50));
+
         javax.swing.GroupLayout PanelLogoTokoLayout = new javax.swing.GroupLayout(PanelLogoToko);
         PanelLogoToko.setLayout(PanelLogoTokoLayout);
         PanelLogoTokoLayout.setHorizontalGroup(
             PanelLogoTokoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
+            .addGroup(PanelLogoTokoLayout.createSequentialGroup()
+                .addComponent(LabelLogoToko, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         PanelLogoTokoLayout.setVerticalGroup(
             PanelLogoTokoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
+            .addGroup(PanelLogoTokoLayout.createSequentialGroup()
+                .addComponent(LabelLogoToko, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        panel_tengah.setPreferredSize(new java.awt.Dimension(1280, 699));
-        panel_tengah.setLayout(new java.awt.CardLayout());
+        panelContainer.setPreferredSize(new java.awt.Dimension(1280, 699));
+        panelContainer.setLayout(new java.awt.CardLayout());
 
         jPanel1.setPreferredSize(new java.awt.Dimension(1416, 906));
 
@@ -228,14 +239,14 @@ public class MainJframe extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1395, Short.MAX_VALUE)
+            .addGap(0, 1407, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 925, Short.MAX_VALUE)
         );
 
-        panel_tengah.add(jPanel1, "card2");
+        panelContainer.add(jPanel1, "card2");
 
         DataBarang.setBackground(new java.awt.Color(233, 235, 239));
         DataBarang.setForeground(java.awt.Color.white);
@@ -411,7 +422,7 @@ public class MainJframe extends javax.swing.JFrame {
                 .addContainerGap(66, Short.MAX_VALUE))
         );
 
-        panel_tengah.add(DataBarang, "card3");
+        panelContainer.add(DataBarang, "card3");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -420,12 +431,14 @@ public class MainJframe extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(panelNavigasiBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PanelLogoToko, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(PanelLogoToko, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(1416, 1416, 1416)
-                        .addComponent(panel_tengah, javax.swing.GroupLayout.DEFAULT_SIZE, 1395, Short.MAX_VALUE))
+                        .addComponent(panelContainer, javax.swing.GroupLayout.DEFAULT_SIZE, 1407, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(panel_atas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))))
@@ -440,7 +453,7 @@ public class MainJframe extends javax.swing.JFrame {
                         .addComponent(PanelLogoToko, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(panel_tengah, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(panelContainer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(panelNavigasiBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 226, Short.MAX_VALUE))))
@@ -513,6 +526,7 @@ public class MainJframe extends javax.swing.JFrame {
     private javax.swing.JLabel LabelEntryes;
     private javax.swing.JLabel LabelJabatanUser;
     private javax.swing.JLabel LabelKategori;
+    private javax.swing.JLabel LabelLogoToko;
     private javax.swing.JLabel LabelNamaToko;
     private javax.swing.JLabel LabelNamaUser;
     private javax.swing.JPanel PanelFotoProfil;
@@ -526,10 +540,10 @@ public class MainJframe extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTable jTable1;
     private javax.swing.JLabel labelShow;
+    private javax.swing.JPanel panelContainer;
     private javax.swing.JPanel panelLogoTransaksi;
     private javax.swing.JPanel panelNavigasiBar;
     private javax.swing.JPanel panel_atas;
-    private javax.swing.JPanel panel_tengah;
     private javax.swing.JScrollPane scroledPanelForTable;
     // End of variables declaration//GEN-END:variables
 }
